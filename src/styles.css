@@ -1,7 +1,7 @@
 :root {
   --primary-font: "Poppins", sans-serif;
   --secondary-font: "Montserrat", sans-serif;
-  --secondary-color: rgba(0, 0, 0, 0.75);
+  --secondary-color: #474747;
   --primary-color: #ffe9e3;
   --box-shadow: 0px 0px 47px 15px rgba(0, 0, 0, 0.2);
 }
@@ -15,6 +15,7 @@
   width: 20%;
   background-color: var(--primary-color);
   padding: 14px;
+  color: var(--secondary-color);
 }
 nav {
   position: fixed;
@@ -48,6 +49,14 @@ nav ul li:hover {
   background-color: var(--primary-color);
   box-shadow: var(--box-shadow);
 }
+.active-link {
+  border: 1px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  box-shadow: var(--box-shadow);
+}
+.active-link a {
+  color: var(--secondary-color);
+}
 .text-1 {
   font-family: var(--primary-font);
   font-size: 96px;
@@ -74,16 +83,25 @@ nav ul li:hover {
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   scroll-snap-align: start;
+  background-color: var(--primary-color);
 }
 .slide {
-  width: 80vw;
+  width: 100vw;
   height: 100vw;
   flex-shrink: 0;
-  height: 100%;
-  background-color: aliceblue;
-  color: aqua;
   scroll-behavior: smooth;
+  scroll-snap-align: start;
 }
+.back-img {
+  position: fixed;
+  bottom: -180px;
+  right: -130px;
+}
+
+.slider .description {
+  color: var(--secondary-color);
+}
+
 @media (max-width: 991px) {
   .logo {
     margin-top: 0px;
@@ -117,5 +135,20 @@ nav ul li:hover {
     display: inline;
     margin: 0px;
     font-size: 18px;
+  }
+  .slider,
+  .slide {
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .slider .description {
+    margin: 10px !important;
+    padding: 0 !important;
+  }
+  .slider h1 {
+    font-size: 36px;
   }
 }
